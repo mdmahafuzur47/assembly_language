@@ -15,8 +15,32 @@ main proc
     mov dl, 13 ; ASCII code for carriage return
     int 21h
 
+    mov ah, 1
+    int 21h
+    mov bh, al
+
+    ;new line
+    mov ah, 2
+    mov dl, 10 ; ASCII code for new line feed
+    int 21h
+    mov dl, 13 ; ASCII code for carriage return
+    int 21h
+
+
     mov ah, 2
     mov dl, bl
+    int 21h
+
+
+    ;new line
+    mov ah, 2
+    mov dl, 10 ; ASCII code for new line feed
+    int 21h
+    mov dl, 13 ; ASCII code for carriage return
+    int 21h
+
+    mov ah, 2
+    mov dl, bh
     int 21h
 
 
